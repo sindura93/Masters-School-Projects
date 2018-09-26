@@ -38,7 +38,7 @@ featuremeandata = df.transpose().groupby(dftranspose[:][0]).mean()
 featuremeandata = featuremeandata.loc[:, 1:]
 centroidData = featuremeandata.transpose().as_matrix()
 
-#calculate mean of all features for a specific class label
+#calculate variance of all features for a specific class label
 featurevardata = df.transpose().groupby(dftranspose[:][0]).var()
 featurevardata = featurevardata.loc[:, 1:]
 
@@ -67,6 +67,7 @@ def getfeaturevardata(classlblval, val):
             varrowdatabyvalue = pd.DataFrame(((val-1)*varrowdata))        
     return varrowdatabyvalue
 
+# pick genome observations based on top 100 f-score
 def pickGenome():
     for key, value in classlabelcountinfo.items():
         # constructing fscore numerator and denominator vector
@@ -94,7 +95,7 @@ def pickGenome():
     fscorenumdata.columns = range(fscorenumdata.shape[1])
     fscorevardata.columns = range(fscorevardata.shape[1])
     
-    #f-score
+    #calculating f-score
     fscores =  (fscorenumdata / fscorevardata).transpose()
     fscores.columns = ['Genome_fscore']
     #print(fscores)
@@ -110,6 +111,7 @@ def pickGenome():
     storeTop100GenomeData(top100fscoreindices)
     generateTop100TestData(top100fscoreindices)        
 
+# from the observations that has top 100 f-score data, create and store the train data from those 100 observations
 def storeTop100GenomeData(genomeList):
     file = open("GenomeTop100TrainData.txt", "w")
     r1, = data[0][:].shape
@@ -127,6 +129,7 @@ def storeTop100GenomeData(genomeList):
         file.write("\n")
     file.close()
 
+# from the observations that has top 100 f-score data, create and store the test data from those 100 observations
 def generateTop100TestData(genomeList):
     file = open("GenomeTop100TestData.txt", "w")
     rx,cx = testData.shape
@@ -140,6 +143,7 @@ def generateTop100TestData(genomeList):
 
 pickGenome()
 
+# using the train and test samples created from the 100 observations that has top f-score, classify the data using various classification models
 def data_classify(classifier):
     if (classifier == "KNN"):
         #storeData(Xtrain, ytrain, Xtest, ytest, classifier)
