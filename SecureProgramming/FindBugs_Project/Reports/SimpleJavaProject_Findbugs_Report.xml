@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1-dev-20150306-5afe4d1" sequence="1" timestamp="1518160741471" analysisTimestamp="1518160741133" release="">
+  <Project projectName="SimpleJavaProject">
+    <Jar>C:\Users\sindu\Documents\workspace\SimpleJavaProject\bin</Jar>
+    <AuxClasspathEntry>C:\Users\sindu\Documents\workspace\SimpleJavaProject\bin</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Program Files\Java\jdk1.8.0_25\jre\lib\rt.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\sindu\Documents\workspace\SimpleJavaProject\src</SrcDir>
+    <Cloud id="edu.umd.cs.findbugs.cloud.doNothingCloud" online="false"></Cloud>
+  </Project>
+  <BugInstance type="DMI_HARDCODED_ABSOLUTE_FILENAME" priority="2" rank="17" abbrev="DMI" category="STYLE" first="1">
+    <Class classname="sindu.simplejavaproject.SimpleJavaClass">
+      <SourceLine classname="sindu.simplejavaproject.SimpleJavaClass" sourcefile="SimpleJavaClass.java" sourcepath="sindu/simplejavaproject/SimpleJavaClass.java"/>
+    </Class>
+    <Method classname="sindu.simplejavaproject.SimpleJavaClass" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="sindu.simplejavaproject.SimpleJavaClass" start="7" end="25" startBytecode="0" endBytecode="51" sourcefile="SimpleJavaClass.java" sourcepath="sindu/simplejavaproject/SimpleJavaClass.java"/>
+    </Method>
+    <String value="C:\\Users\\Default\\Documents" role="FILE_NAME"/>
+    <SourceLine classname="sindu.simplejavaproject.SimpleJavaClass" start="7" end="7" startBytecode="6" endBytecode="6" sourcefile="SimpleJavaClass.java" sourcepath="sindu/simplejavaproject/SimpleJavaClass.java"/>
+    <SourceLine classname="sindu.simplejavaproject.SimpleJavaClass" start="7" end="7" startBytecode="6" endBytecode="6" sourcefile="SimpleJavaClass.java" sourcepath="sindu/simplejavaproject/SimpleJavaClass.java"/>
+  </BugInstance>
+  <BugInstance type="NP_NULL_ON_SOME_PATH_FROM_RETURN_VALUE" priority="2" rank="13" abbrev="NP" category="STYLE" first="1">
+    <Class classname="sindu.simplejavaproject.SimpleJavaClass">
+      <SourceLine classname="sindu.simplejavaproject.SimpleJavaClass" sourcefile="SimpleJavaClass.java" sourcepath="sindu/simplejavaproject/SimpleJavaClass.java"/>
+    </Class>
+    <Method classname="sindu.simplejavaproject.SimpleJavaClass" name="main" signature="([Ljava/lang/String;)V" isStatic="true">
+      <SourceLine classname="sindu.simplejavaproject.SimpleJavaClass" start="7" end="25" startBytecode="0" endBytecode="274" sourcefile="SimpleJavaClass.java" sourcepath="sindu/simplejavaproject/SimpleJavaClass.java"/>
+    </Method>
+    <LocalVariable name="folderOrFileList" register="2" pc="29" role="LOCAL_VARIABLE_VALUE_OF"/>
+    <SourceLine classname="sindu.simplejavaproject.SimpleJavaClass" start="16" end="16" startBytecode="30" endBytecode="30" sourcefile="SimpleJavaClass.java" sourcepath="sindu/simplejavaproject/SimpleJavaClass.java" role="SOURCE_LINE_DEREF"/>
+    <SourceLine classname="sindu.simplejavaproject.SimpleJavaClass" start="14" end="14" startBytecode="25" endBytecode="25" sourcefile="SimpleJavaClass.java" sourcepath="sindu/simplejavaproject/SimpleJavaClass.java" role="SOURCE_LINE_KNOWN_NULL"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Fri, 9 Feb 2018 01:18:49 -0600" total_classes="2" referenced_classes="16" total_bugs="2" total_size="22" num_packages="1" java_version="1.8.0_25" vm_version="25.25-b02" cpu_seconds="25.97" clock_seconds="66173.54" peak_mbytes="674.07" alloc_mbytes="1024.00" gc_seconds="0.38" priority_2="2">
+    <PackageStats package="sindu.simplejavaproject" total_bugs="2" total_types="2" total_size="22" priority_2="2">
+      <ClassStats class="sindu.simplejavaproject.SimpleJavaClass" sourceFile="SimpleJavaClass.java" interface="false" size="16" bugs="2" priority_2="2"/>
+      <ClassStats class="sindu.simplejavaproject.SimpleJavaClass$1" sourceFile="SimpleJavaClass.java" interface="false" size="6" bugs="0"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="91" invocations="349" avgMicrosecondsPerInvocation="262" maxMicrosecondsPerInvocation="19718" standardDeviationMircosecondsPerInvocation="1115"/>
+      <ClassProfile name="de.tobject.findbugs.builder.FindBugs2Eclipse" totalMilliseconds="79" invocations="2" avgMicrosecondsPerInvocation="39965" maxMicrosecondsPerInvocation="72773" standardDeviationMircosecondsPerInvocation="32808"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="36" invocations="349" avgMicrosecondsPerInvocation="104" maxMicrosecondsPerInvocation="392" standardDeviationMircosecondsPerInvocation="45"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="25" invocations="16" avgMicrosecondsPerInvocation="1577" maxMicrosecondsPerInvocation="19823" standardDeviationMircosecondsPerInvocation="4730"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="12" invocations="16" avgMicrosecondsPerInvocation="756" maxMicrosecondsPerInvocation="4583" standardDeviationMircosecondsPerInvocation="1126"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History>
+    <AppVersion sequence="0" timestamp="1518160741471" release="" codeSize="0" numClasses="0"/>
+  </History>
+</BugCollection>
