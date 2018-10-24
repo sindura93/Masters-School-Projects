@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<!-- Student Name: Rathna Sindura Chikkam-->
+<html lang="en">
+  <head>
+    <title>Web Mashup: Display Best Restaurants on a Map</title>
+    <meta charset="utf-8"/>
+	<style type="text/css">
+	.header {
+		background: #081c24;
+		color: white;
+		height: 75px;
+		font-size: 15px;
+		display: center;
+		padding: 15px;
+		font-family: sans-serif;
+		text-align: center;
+		vertical-align: middle;
+	}
+	.footer {
+		text-align: center;
+		font-family: sans-serif;
+		font-size: 12px;
+	}
+	.section-1 {
+		border-radius: 15px;
+		border: 1px solid gray;
+		font-family: sans-serif;
+		height: 35px;
+		text-align: center;
+		vertical-align: middle;
+		display: table-cell;
+	}
+	/*.row::after {
+		display: table-cell;
+		font-family: sans-serif;
+	}*/
+	.row {
+		display: -ms-flexbox; /* IE10 */
+		display: flex;
+		-ms-flex-wrap: wrap; /* IE10 */
+		flex-wrap: wrap;
+		padding: 0 4px;
+		font-family: sans-serif;
+	}
+	.row img {
+		margin-top: 8px;
+		vertical-align: middle;
+	}
+
+	.div {
+		font-family: sans-serif;
+	}
+	[class*="col-"] {
+		float: left;
+		padding: 15px;
+		font-family: sans-serif;
+		display: table-cell;
+	}
+	.col-1 {width: 5%;}
+	.col-2 {width: 16.66%;}
+	.col-3 {width: 20%;}
+	.col-4 {width: 33.33%;}
+	.col-5 {width: 41.66%;}
+	.col-6 {width: 47%;}
+	.col-7 {width: 58.33%;}
+	.col-8 {width: 66.66%;}
+	.col-9 {width: 70%;}
+	.col-10 {width: 83.33%;}
+	.col-11 {width: 91.66%;}
+	.col-12 {width: 100%;}
+	
+	.button {
+		background-color: #081c24;
+		color: white;
+		font-family: sans-serif;
+		border-radius: 5px;
+		display: inline-block;
+		font-size: 15px;
+		height: 25px;
+	}
+	
+	.button:hover{
+		background-color: #708090;
+	}
+	
+	@media screen and (max-width: 800px) {
+		.column {
+			-ms-flex: 50%;
+			flex: 50%;
+			max-width: 50%;
+		}
+	}
+
+	@media screen and (max-width: 600px) {
+		.column {
+			-ms-flex: 100%;
+			flex: 100%;
+			max-width: 100%;
+		}
+	}
+	</style>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9W15APCbndZz5mMaZzmaLxtuQ9ikvX_4"></script>
+    <script type="text/javascript" src="yelp.js"></script>
+  </head>
+  <body onload="initialize();">
+    <form>
+       <label>Search Terms: <input type="text" id="search"/></label>
+       <input type="button" onclick="sendRequest();" value="Find"/>
+    </form>
+    <div class="row">
+		<div class="row">		
+		<div class="col-6">
+			<div id="googleMap" style="width: 600px; height: 500px;"></div>
+		</div>
+		<div class="col-1" id="spacingDiv" style="border: none;"></div>
+		<div class="col-4">
+			<h4 id="searchResults" style="font-weight: bold;">Search Results:</h4>
+			<div id="output">
+			
+			</div>
+			<br/>
+		</div>
+	</div>
+	</div>
+  </body>
+</html>
